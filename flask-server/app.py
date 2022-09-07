@@ -8,7 +8,13 @@ from routes.Movie import main
 
 app = Flask(__name__)
 
-CORS(app, resources={"*": {"origins": "http://localhost:9300"}}) #toda la app habilitada con esto
+#members API Route
+
+@app.route("/members")
+def members():
+    return {"members":["Member1","Member2","Member3"]}
+
+#CORS(app, resources={"*": {"origins": "http://localhost:9300"}}) #toda la app habilitada con esto
 
 
 def page_not_found(error):

@@ -1,3 +1,4 @@
+#from app import app
 from flask import Blueprint, jsonify, request
 import uuid
 
@@ -17,6 +18,12 @@ def get_movies():
         return jsonify(movies)
     except Exception as ex:
         return jsonify({'message': str(ex)}), 500
+    
+#members API Route
+
+#@main.route("/members")
+#def members():
+#    return {"members":["Member1","Member2","Member3"]}
 
 @main.route('/<id>')
 def get_movie(id):
