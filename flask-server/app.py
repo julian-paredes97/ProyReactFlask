@@ -1,5 +1,5 @@
 from flask import Flask
-#from flask_cors import CORS
+from flask_cors import CORS
 
 from config import config
 
@@ -8,7 +8,7 @@ from routes.Movie import main
 
 app = Flask(__name__)
 
-#CORS(app, resources={"*": {"origins": "http://localhost:9300"}})
+CORS(app, resources={"*": {"origins": "http://localhost:9300"}}) #toda la app habilitada con esto
 
 
 def page_not_found(error):
